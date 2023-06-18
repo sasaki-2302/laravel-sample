@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/boot_template', function () {
-    return view('boot_template.index');
+    return view('address.index');
 });
