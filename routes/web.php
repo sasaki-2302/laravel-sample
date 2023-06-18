@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/boot_template', function () {
+    return view('boot_template.index');
+});
