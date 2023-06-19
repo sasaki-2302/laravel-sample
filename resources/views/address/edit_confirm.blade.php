@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <h1 class="font-weight-light mt-4">Laravel CRUD APP</h1>
                     <p class="lead">
-                        以下の内容で新規登録します。<br>
+                        以下の編集内容で登録します。<br>
                     </p>
 
                     <!-- Page Content -->

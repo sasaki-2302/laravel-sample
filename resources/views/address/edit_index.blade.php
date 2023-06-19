@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <h1 class="font-weight-light mt-4">Laravel CRUD APP</h1>
                     <p class="lead">
-                      新規登録する内容を入力してください。<br>
+                        編集する内容を入力してください。<br>
                     </p>
 
                     <!-- Page Content -->
@@ -23,7 +23,7 @@
                         <div class="form-group row">
                             <label for="inputName" class="col-sm-2 col-form-label">お名前</label>
                             <div class="col-sm-10">
-                                <input type="text" name="name" value="{{ old('name') }}" class="form-control @if($errors->has('name')) is-invalid @endif" id="inputName" placeholder="山田　太郎" required>
+                                <input type="text" name="name" value="{{ $address->name }}" class="form-control @if($errors->has('name')) is-invalid @endif" id="inputName" placeholder="山田　太郎" required>
                                 @if($errors->has('name'))
                                     <div class="invalid-feedback">{{ $errors->first('name') }}</div>
                                 @else
@@ -37,7 +37,7 @@
                         <div class="form-group row">
                             <label for="inputEmail" class="col-sm-2 col-form-label">メールアドレス</label>
                             <div class="col-sm-10">
-                                <input type="email" name="email" value="{{ old('email') }}" class="form-control @if($errors->has('email')) is-invalid @endif" id="inputEmail" placeholder="yamada@laraweb.net" required>
+                                <input type="email" name="email" value="{{ $address->email }}" class="form-control @if($errors->has('email')) is-invalid @endif" id="inputEmail" placeholder="yamada@laraweb.net" required>
                                 @if($errors->has('email'))
                                     <div class="invalid-feedback">{{ $errors->first('email') }}</div>
                                 @else
@@ -51,7 +51,7 @@
                         <div class="form-group row">
                             <label for="inputTel" class="col-sm-2 col-form-label">電話番号</label>
                             <div class="col-sm-10">
-                                <input type="tel" name="tel" value="{{ old('tel') }}" class="form-control @if($errors->has('tel')) is-invalid @endif" id="inputTel" placeholder="080-1111-2222" required>
+                                <input type="tel" name="tel" value="{{ $address->tel }}" class="form-control @if($errors->has('tel')) is-invalid @endif" id="inputTel" placeholder="080-1111-2222" required>
                                 @if($errors->has('tel'))
                                     <div class="invalid-feedback">{{ $errors->first('tel') }}</div>
                                 @else
@@ -64,7 +64,7 @@
                         <!--メッセージ-->
                         <div class="form-group pb-3">
                             <label for="Textarea">メッセージ</label>
-                            <textarea name="message" class="form-control @if($errors->has('message')) is-invalid @endif" id="Textarea" rows="3" placeholder="その他、備考欄" required>{{ old('message') }}</textarea>
+                            <textarea name="message" class="form-control @if($errors->has('message')) is-invalid @endif" id="Textarea" rows="3" placeholder="その他、備考欄" required>{{ $address->message }}</textarea>
                             @if($errors->has('message'))
                                 <div class="invalid-feedback">{{ $errors->first('message') }}</div>
                             @else
