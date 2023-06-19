@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/address', function () {
     return view('address.index');
 });
+
+Route::get('crud/', 'CrudController@getIndex');
