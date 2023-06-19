@@ -12,5 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+
+        // StudentsTableSeeder を呼び出すよう登録
+        $this->call(AddressesTableSeeder::class);
     }
 }
