@@ -1,14 +1,14 @@
 @extends('layouts.master_bootstrap') {{-- テンプレート読み込み --}}
-@section('title', 'Laravel CRUD APP チュートリアル') {{-- サイトタイトル定義 --}}
+@section('title', 'Laravel CRUD APP') {{-- サイトタイトル定義 --}}
 @section('content')
   <!-- Page Content -->
   <div id="page-content">
     <div class="container">
       <div class="row justify-content-left">
         <div class="col-md-12">
-          <h1 class="font-weight-light mt-4">Laravel CRUD APP チュートリアル</h1>
+          <h1 class="font-weight-light mt-4">Laravel CRUD APP</h1>
           <p class="lead">
-              このページは「Laravel CRUD APP」のデモページです。<br>
+              <br>
           </p>
 
           <!-- Page Content -->
@@ -27,7 +27,7 @@
                 </form>
               </div>
               <div class="col-sm-2" style="padding-left: 0;">
-                <a href="#" class="btn" style="background-color: #f0ad4e; color: white; width: 110px;"><i class="fas fa-plus"></i> 新規登録</a>
+                <a href="/address/new" class="btn" style="background-color: #f0ad4e; color: white; width: 110px;"><i class="fas fa-plus"></i> 新規登録</a>
               </div>
             </div>
 

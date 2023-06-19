@@ -15,8 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/address', function () {
-    return view('address.index');
+Route::group(['prefix' => 'address'], function () {   // railsのmember doみたいな
+    Route::get('index', 'CrudController@getIndex');    // 一覧
+    Route::get('new', 'CrudController@new_index');    // 入力
+    Route::patch('new','CrudController@new_confirm'); // 確認
+    Route::post('new', 'CrudController@new_finish');  // 完了
 });
-
-Route::get('crud/', 'CrudController@getIndex');
