@@ -56,7 +56,7 @@
                     <td>
                       <form action="/address/delete/{{$address->id}}" method="POST">
                         {{ csrf_field() }}
-                        <input type="submit" class="btn btn-danger btn-dell" value="削除" onclick='return confirm("本当に削除しますか？")'>
+                        <input type="submit" class="btn btn-danger" value="削除" onclick='return confirm("本当に削除しますか？")'>
                       </form>
                     </td>
                   </tr>
