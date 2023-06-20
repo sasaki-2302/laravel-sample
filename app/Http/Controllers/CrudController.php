@@ -7,13 +7,24 @@ use Illuminate\Http\Request;
 class CrudController extends Controller
 {
     // 一覧取得
-    public function getIndex()
+    public function getIndex(Request $rq)
     {
+        //キーワード受け取り
+        $keyword = $rq->input('keyword');
+
+        //クエリ生成
         $query = \App\Address::query();
+
+        //もしキーワードがあったら
+        if(!empty($keyword))
+        {
+            $query->where('email','like','%'.$keyword.'%');
+            $query->orWhere('name','like','%'.$keyword.'%');
+        }
 
         // 全件取得 +ページネーション
         $addresses = $query->orderBy('id','desc')->paginate(5);
-        return view('address.index')->with('addresses',$addresses);
+        return view('address.index')->with('addresses',$addresses)->with('keyword',$keyword);
     }
 
 
