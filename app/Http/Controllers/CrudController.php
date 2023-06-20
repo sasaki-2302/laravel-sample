@@ -46,6 +46,14 @@ class CrudController extends Controller
     }
 
 
+    //詳細画面
+    public function show_index($id)
+    {
+        $address = \App\Address::findOrFail($id);
+        return view('address.show_index')->with('address',$address);
+    }
+
+
     //編集画面(入力)
     public function edit_index($id)
     {
