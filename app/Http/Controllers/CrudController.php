@@ -82,4 +82,16 @@ class CrudController extends Controller
         return redirect()->to('address/index');
     }
 
+
+    //削除
+    public function us_delete($id)
+    {
+        // 削除対象レコードを検索
+        $user = \App\Address::find($id);
+        // 削除
+        $user->delete();
+        // リダイレクト
+        return redirect()->to('address/index');
+    }
+
 }

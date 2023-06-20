@@ -27,4 +27,6 @@ Route::group(['prefix' => 'address'], function () {   // railsのmember doみた
     Route::get('edit/{id}/', 'CrudController@edit_index');    // 編集
     Route::patch('edit/{id}/','CrudController@edit_confirm'); // 確認
     Route::post('edit/{id}/', 'CrudController@edit_finish');  // 完了
+
+    Route::post('delete/{id}/', 'CrudController@us_delete'); // 削除
 });

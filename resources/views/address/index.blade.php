@@ -53,7 +53,12 @@
                     <td>{{$address->tel}}</td>
                     <td><a href="/address/show/{{$address->id}}"><button type="button" class="btn btn-success">詳細</button></a></td>
                     <td><a href="/address/edit/{{$address->id}}"><button type="button" class="btn btn-primary">編集</button></a></td>
-                    <td><button type="button" class="btn btn-danger">削除</button></td>
+                    <td>
+                      <form action="/address/delete/{{$address->id}}" method="POST">
+                        {{ csrf_field() }}
+                        <input type="submit" class="btn btn-danger btn-dell" value="削除" onclick='return confirm("本当に削除しますか？")'>
+                      </form>
+                    </td>
                   </tr>
                 @endforeach
                 </table>
