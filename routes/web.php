@@ -14,8 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::group(['prefix' => 'address'], function () {   // railsのmember doみたいな
+//未ログイン時は連絡先アプリを開けないようにする
+Route::group(['middleware' => ['auth'],'prefix' => 'address'], function () {   // railsのmember doみたいな
     Route::get('index', 'CrudController@getIndex');    // 一覧
 
     Route::get('new', 'CrudController@new_index');    // 入力
@@ -33,4 +33,4 @@ Route::group(['prefix' => 'address'], function () {   // railsのmember doみた
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
 
-Route::get('/home', 'CrudController@getIndex')->name('home');
+Route::get('/home', 'CrudController@getIndex')->name('home')->middleware('auth');
