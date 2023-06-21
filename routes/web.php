@@ -30,3 +30,6 @@ Route::group(['prefix' => 'address'], function () {   // railsのmember doみた
 
     Route::post('delete/{id}/', 'CrudController@destroy'); // 削除
 });
+Auth::routes();
+
+Route::get('/home', 'CrudController@getIndex')->name('home');
