@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CrudController extends Controller
 {
@@ -45,7 +46,7 @@ class CrudController extends Controller
         // Addressオブジェクト生成
         $address = new \App\Address;
         // 値の登録
-        $address->user_id = 1; //ログイン機能未実装のため仮でid送る
+        $address->user_id = Auth::id();
         $address->name = $request->name;
         $address->email = $request->email;
         $address->tel = $request->tel;
